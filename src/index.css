@@ -1,111 +1,171 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    /* Primary */
+    --primary: #6fb29f;
+    --primary-hover: #5e9f8d;
+    --on-primary: #ffffff;
+
+    /* Navigation */
+    --nav-hover-bg: #e8f0ed;
+    --nav-active-bg: #dcebe6;
+    --nav-text: #52625e;
+
+    /* Background & Surface */
+    --background: #f5f4ee;
+    --on-background: #1d2926;
+    --surface: #ffffff;
+    --surface-primary: #f9f8f3;
+    --surface-secondary: #eef1ed;
+
+    /* Text */
+    --text-primary: #1f2927;
+    --text-secondary: #78837f;
+    --text-muted: #9aa39f;
+
+    /* Accent */
+    --accent: #d5ad68;
+    --on-accent: #ffffff;
+
+    /* Rating */
+    --rating: #d5ad68;
+
+    /* Status */
+    --success: #6fb29f;
+    --error: #d96b63;
+    --warning: #d5ad68;
+
+    /* Border */
+    --border: #dfe3df;
+    --border-light: #e9ece8;
+
+    /* Overlay */
+    --overlay: rgba(11, 27, 29, 0.55);
+    --overlay-dark: rgba(7, 20, 22, 0.78);
+
+    /* Neutral */
+    --neutral-1: #ffffff;
+    --neutral-2: #f9f8f3;
+    --neutral-3: #f0f1ed;
+    --neutral-4: #dfe3df;
+    --neutral-5: #c5cbc7;
+    --neutral-6: #9aa39f;
+    --neutral-7: #78837f;
+    --neutral-8: #52625e;
+    --neutral-9: #2d3935;
+    --neutral-10: #1d2926;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  .dark {
+    /* Primary */
+    --primary: #78b9a5;
+    --primary-hover: #8bc8b5;
+    --on-primary: #10201c;
+
+    /* Navigation */
+    --nav-hover-bg: #173536;
+    --nav-active-bg: #234846;
+    --nav-text: #d7e2de;
+
+    /* Background & Surface */
+    --background: #091b20;
+    --on-background: #f3f4ef;
+    --surface: #10272b;
+    --surface-primary: #0d2226;
+    --surface-secondary: #163136;
+
+    /* Text */
+    --text-primary: #f3f4ef;
+    --text-secondary: #a9b5b1;
+    --text-muted: #7e8d88;
+
+    /* Accent */
+    --accent: #d7b36f;
+    --on-accent: #17201d;
+
+    /* Rating */
+    --rating: #d7b36f;
+
+    /* Status */
+    --success: #78b9a5;
+    --error: #df7168;
+    --warning: #d7b36f;
+
+    /* Border */
+    --border: #284044;
+    --border-light: #20383c;
+
+    /* Overlay */
+    --overlay: rgba(5, 18, 21, 0.58);
+    --overlay-dark: rgba(3, 13, 16, 0.82);
+
+    /* Neutral */
+    --neutral-1: #071417;
+    --neutral-2: #0b1d21;
+    --neutral-3: #10272b;
+    --neutral-4: #163136;
+    --neutral-5: #284044;
+    --neutral-6: #50615d;
+    --neutral-7: #7e8d88;
+    --neutral-8: #a9b5b1;
+    --neutral-9: #d7e0dc;
+    --neutral-10: #f3f4ef;
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+@theme {
+  /* Fonts */
+  --font-sans: "Vazirmatn", sans-serif;
+
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+
+  --color-nav-hover-bg: var(--nav-hover-bg);
+  --color-nav-active-bg: var(--nav-active-bg);
+  --color-nav-text: var(--nav-text);
+
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+
+  --color-surface: var(--surface);
+  --color-surface-primary: var(--surface-primary);
+  --color-surface-secondary: var(--surface-secondary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+
+  --color-rating: var(--rating);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+
+  /* Overlay */
+  --color-overlay: var(--overlay);
+  --color-overlay-dark: var(--overlay-dark);
+
+  /* Neutral */
+  --color-neutral-1: var(--neutral-1);
+  --color-neutral-2: var(--neutral-2);
+  --color-neutral-3: var(--neutral-3);
+  --color-neutral-4: var(--neutral-4);
+  --color-neutral-5: var(--neutral-5);
+  --color-neutral-6: var(--neutral-6);
+  --color-neutral-7: var(--neutral-7);
+  --color-neutral-8: var(--neutral-8);
+  --color-neutral-9: var(--neutral-9);
+  --color-neutral-10: var(--neutral-10);
+
+
 }
 
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
