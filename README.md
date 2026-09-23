@@ -22,3 +22,10 @@ A cinematic movie and series streaming app built with React. Persian-first UI wi
 - Lucide React (icons)
 - Supabase (Auth + Watchlist persistence)
 - TMDB API (movie/series data)
+
+## Project Architecture
+
+This project follows a **Feature-lite Layered Architecture**, suitable for
+small-to-medium scale React applications.
+
+### Folder Structure
