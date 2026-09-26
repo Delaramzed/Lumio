@@ -1,4 +1,3 @@
-
 import HeroSection from "../components/home/HeroSection";
 import ContinueWatching from "../components/home/ContinueWatching";
 import MostPopular from "../components/home/MostPopular";
@@ -6,9 +5,11 @@ import MostPopular from "../components/home/MostPopular";
 function HomePage() {
   return (
     <main>
-      <HeroSection />
-      <ContinueWatching />
-      <MostPopular />
+      <div className="min-h-screen bg-background md:ml-64">
+        <HeroSection />
+        <ContinueWatching />
+        <MostPopular />
+      </div>
     </main>
   );
 }
