@@ -1,3 +1,4 @@
+
 import HeroSection from "../components/home/HeroSection";
 import ContinueWatching from "../components/home/ContinueWatching";
 import MostPopular from "../components/home/MostPopular";
@@ -11,4 +12,5 @@ function HomePage() {
     </main>
   );
 }
+
 export default HomePage;

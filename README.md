@@ -1,75 +1,31 @@
-# React + TypeScript + Vite
+# Lumio 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic movie and series streaming app built with React. Persian-first UI with dark theme.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🏠 Home with hero banner, Continue Watching, and carousels
+- 🎥 Movies & Series browsing with genre filters
+- 🔍 Search with type, rating, and year filters
+- ▶️ Watch page with episode list and autoplay toggle
+- 🎞️ Movie/Series detail pages with cast and trailer tabs
+- 👤 Multi-profile support (including Kids profile)
+- ❤️ Watchlist / My List with sort and filter
+- 🔐 Auth (Login / Register) with Google & Apple SSO
+- 📱 Fully responsive — desktop, tablet, mobile
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Vite](https://vitejs.dev/) + React
+- React Router v6 (nested routes with `Outlet` for sidebar layout)
+- Axios (TMDB API)
+- Lucide React (icons)
+- Supabase (Auth + Watchlist persistence)
+- TMDB API (movie/series data)
 
-## Expanding the ESLint configuration
+## Project Architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project follows a **Feature-lite Layered Architecture**, suitable for
+small-to-medium scale React applications.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+### Folder Structure
