@@ -20,10 +20,11 @@ function ContinueWatching() {
   <div className="overflow-hidden rounded-2xl bg-surface">
           <div className="relative h-24">
             <img
-              src=""
+              src="../src/assets/The-Last-of-Us.jpg"
               alt="The Last of Us"
               className="h-full w-full object-cover"
             />
+
 
           </div>
 
