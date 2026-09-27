@@ -21,11 +21,11 @@ function Sidebar() {
         <Menu size={24} />
       </button>
 
-     <aside
-  className={`bg-on-background fixed top-0 left-0 z-50 flex h-screen w-64 flex-col  ${
-    isOpen ? "flex" : "hidden"
-  } md:flex`}
->
+      <aside
+        className={`bg-on-background fixed top-0 left-0 z-50 flex h-screen w-64  flex-col ${
+          isOpen ? "flex" : "hidden"
+        } md:flex`}
+      >
         <button onClick={() => setIsOpen(false)} className="mb-6 md:hidden">
           <X size={24} />
         </button>
@@ -58,7 +58,7 @@ function Sidebar() {
           </button>
         </nav>
 
-        <div className="mt-auto  pb-6">
+        <div className="mt-auto pb-6">
           <button className="text-nav-text hover:bg-nav-hover-bg flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-lg transition-colors">
             <CircleUserRound size={30} />
             پروفایل
