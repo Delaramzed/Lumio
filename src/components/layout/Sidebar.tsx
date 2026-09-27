@@ -1,4 +1,11 @@
-import { CircleUserRound, Film, Heart, Home, Tags, Tv } from "lucide-react";
+import {
+  CircleUserRound,
+  Film,
+  Heart,
+  Home,
+  Tags,
+  Tv,
+} from "lucide-react";
 
 function Sidebar() {
   return (
