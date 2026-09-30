@@ -12,6 +12,18 @@
     --primary-hover: #5e9f8d;
     --on-primary: #ffffff;
 
+    /* Design Palette */
+    --brand-green: #6faf9f;
+    --brand-green-dark: #509a7b;
+    --brand-green-light: #a8b9ad;
+
+    --brand-gold: #d8b77a;
+
+    --brand-off-white: #f5f3ee;
+    --brand-gray: #a9b2ad;
+
+    --brand-dark: #26322e;
+    --brand-black: #0b1110;
     /* Navigation */
     --nav-hover-bg: #e8f0ed;
     --nav-active-bg: #dcebe6;
@@ -163,6 +175,19 @@
 
   --color-border: var(--border);
   --color-border-light: var(--border-light);
+
+  /* Design Palette */
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-brand-green-light: var(--brand-green-light);
+
+  --color-brand-gold: var(--brand-gold);
+
+  --color-brand-off-white: var(--brand-off-white);
+  --color-brand-gray: var(--brand-gray);
+
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-black: var(--brand-black);
 
   /* Overlay */
   --color-overlay: var(--overlay);
