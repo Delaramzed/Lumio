@@ -18,13 +18,12 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         {/* Protected */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/series" element={<SeriesPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="series" element={<SeriesPage />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="profile" element={<ProfilePage />} />
           {/* 404 */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
