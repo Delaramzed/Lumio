@@ -4,7 +4,10 @@ import Header from "@/components/layout/Header";
 
 export default function MainLayout() {
   return (
-    <div className="bg-on-background text-foreground md:bg-background flex h-screen overflow-hidden">
+    <div
+      className="bg-on-background text-foreground md:bg-background flex h-screen overflow-hidden"
+      dir="ltr"
+    >
       <Sidebar />
 
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden md:ml-64">
