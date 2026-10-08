@@ -1,8 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import CatalogLayout from "./CatalogLayout";
 
 export default function MainLayout() {
+  const { pathname } = useLocation();
+  if (/^\/(series|search)\/?$/.test(pathname)) {
+    return <CatalogLayout />;
+  }
   return (
     <div className="bg-on-background text-foreground md:bg-background flex h-screen overflow-hidden">
       <Sidebar />
