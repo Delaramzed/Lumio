@@ -1,6 +1,8 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import MainLayout from "@/components/layout/MainLayout";
+import { ProtectedRoute } from "@/components/common/ProtectedRoute";
 
 import HomePage from "@/pages/HomePage";
 import MoviesPage from "@/pages/MoviesPage";
@@ -19,13 +21,14 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         {/* Protected */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/series" element={<SeriesPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="movies" element={<MoviesPage />} />
+            <Route path="series" element={<SeriesPage />} />
+            <Route path="search" element={<SearchPage />} />
+            <Route path="profile" element={<ProfilePage />} />
+          </Route>
           {/* 404 */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
