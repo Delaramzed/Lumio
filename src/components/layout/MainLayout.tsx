@@ -10,7 +10,11 @@ export default function MainLayout() {
   }
   return (
     <div
-      className="bg-on-background text-foreground md:bg-background flex h-screen overflow-hidden"
+      className="text-foreground flex h-screen overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse at 90% 0, #1a2c23 0, transparent 48%), #06100e",
+      }}
       dir="ltr"
     >
       <Sidebar />
