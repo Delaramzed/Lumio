@@ -32,7 +32,7 @@ function WatchPage() {
       <div dir="ltr" className="grid gap-5 p-6 lg:grid-cols-[1fr_320px]">
         <div className="flex flex-col gap-5">
           <VideoPlayer />
-          {active && <EpisodeInfo episode={active} onNext={() => {}} />}
+          {active && <EpisodeInfo />}
         </div>
         <EpisodePanel
           episodes={episodes}
