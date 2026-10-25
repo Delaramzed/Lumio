@@ -1,28 +1,16 @@
-import {
-  CircleUserRound,
-  Film,
-  House,
-  PanelsTopLeft,
-  Search,
-  UserRound,
-} from "lucide-react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { CircleUserRound, Search } from "lucide-react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import Sidebar from "./Sidebar";
 import "@/pages/catalog.css";
-
-const navigation = [
-  { to: "/", label: "خانه", icon: House },
-  { to: "/movies", label: "فیلم‌ها", icon: Film },
-  { to: "/series", label: "سریال‌ها", icon: PanelsTopLeft },
-  { to: "/search", label: "جست‌وجو", icon: Search },
-  { to: "/profile", label: "پروفایل", icon: UserRound },
-];
 
 export default function CatalogLayout() {
   const isSearch = /^\/search\/?$/.test(useLocation().pathname);
   return (
     <div
       className={
-        isSearch ? "catalog-shell catalog-shell-search" : "catalog-shell"
+        isSearch
+          ? "sidebar-layout catalog-shell catalog-shell-search"
+          : "sidebar-layout catalog-shell"
       }
       lang="fa"
     >
@@ -36,14 +24,7 @@ export default function CatalogLayout() {
           </Link>
         </div>
       </header>
-      <nav className="catalog-navigation" aria-label="منوی اصلی">
-        {navigation.map(({ to, label, icon: Icon }) => (
-          <NavLink key={to} to={to} end={to === "/"}>
-            <Icon size={21} strokeWidth={1.5} aria-hidden="true" />
-            <span>{label}</span>
-          </NavLink>
-        ))}
-      </nav>
+      <Sidebar hideOnMobile={isSearch} />
       <main className="catalog-main">
         <Outlet />
       </main>

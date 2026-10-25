@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Lumio Catalog";
+  src: url("../../assets/fonts/Vazirmatn.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.sidebar-layout {
+  --sidebar-width: 0px;
+  --sidebar-mobile-space: calc(68px + env(safe-area-inset-bottom));
+}
+
+.app-sidebar {
+  position: fixed;
+  z-index: 30;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 8px max(8px, env(safe-area-inset-bottom));
+  min-height: 68px;
+  background: #06100ef5;
+  border-top: 1px solid #20362d;
+  backdrop-filter: blur(14px);
+  font-family: "Lumio Catalog", Tahoma, sans-serif;
+  line-height: 1.5;
+  color-scheme: dark;
+}
+
+.app-sidebar,
+.app-sidebar * {
+  box-sizing: border-box;
+}
+
+.app-sidebar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 48px;
+  color: #b5b8af;
+  font-size: 10px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-sidebar a:focus-visible {
+  outline: 2px solid #6faf8f;
+  outline-offset: 3px;
+}
+
+.app-sidebar a[aria-current="page"] {
+  color: #98cdae;
+}
+
+.app-sidebar a[aria-current="page"] svg {
+  fill: #6faf8f35;
+  stroke-width: 2;
+}
+
+.app-sidebar-desktop-only {
+  display: none;
+}
+
+.main-layout-content {
+  margin-left: var(--sidebar-width);
+}
+
+.main-layout-main {
+  padding-bottom: calc(var(--sidebar-mobile-space) + 16px);
+}
+
+@media (min-width: 768px) {
+  .sidebar-layout {
+    --sidebar-width: 200px;
+    --sidebar-mobile-space: 0px;
+  }
+
+  .app-sidebar {
+    inset: 0 auto 0 0;
+    width: 200px;
+    padding: 32px 16px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    border-top: 0;
+    border-right: 1px solid #20362d;
+    overflow-y: auto;
+  }
+
+  .app-sidebar a {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 14px;
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .app-sidebar a[aria-current="page"] {
+    background: #1a3227;
+  }
+
+  .app-sidebar-desktop-only {
+    display: flex;
+  }
+
+  .main-layout-main {
+    padding-bottom: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-layout {
+    --sidebar-width: 224px;
+  }
+
+  .app-sidebar {
+    width: 224px;
+  }
+}
