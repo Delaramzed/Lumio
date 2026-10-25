@@ -3,6 +3,14 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+@font-face {
+  font-family: "Lumio Catalog";
+  src: url("./assets/fonts/Vazirmatn.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
@@ -141,6 +149,7 @@
 }
 
 @theme {
+  --font-catalog: "Lumio Catalog", Tahoma, sans-serif;
   /* Fonts */
   --font-sans: "Vazirmatn", sans-serif;
 
