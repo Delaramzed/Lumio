@@ -10,19 +10,15 @@ export default function MainLayout() {
   }
   return (
     <div
-      className="sidebar-layout text-foreground flex h-dvh overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse at 90% 0, #1a2c23 0, transparent 48%), #06100e",
-      }}
+      className="text-foreground flex h-dvh overflow-hidden bg-[#06100e] bg-[radial-gradient(ellipse_at_90%_0,#1a2c23_0,transparent_48%)]"
       dir="ltr"
     >
       <Sidebar />
 
-      <div className="main-layout-content flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden md:ml-[200px] lg:ml-56">
         <Header />
 
-        <main className="main-layout-main dark flex-1 overflow-y-auto p-4 md:p-6">
+        <main className="dark flex-1 overflow-y-auto p-4 pb-[calc(84px+env(safe-area-inset-bottom))] md:p-6">
           <Outlet />
         </main>
       </div>
