@@ -1,6 +1,14 @@
 import { Star } from "lucide-react";
 import type { CatalogItem } from "@/types/catalog";
 export function CatalogPoster({ item }: { item: CatalogItem }) {
+  if (!item.poster) {
+    return (
+      <div className="flex h-full items-center justify-center p-2 text-center text-[11px] text-[#a0aaa2]">
+        تصویر موجود نیست
+      </div>
+    );
+  }
+
   return (
     <img
       className="h-full w-full object-cover"
@@ -30,7 +38,7 @@ export default function SeriesCard({ series }: { series: CatalogItem }) {
             <Star aria-hidden="true" />
             {series.rating.toFixed(1)}
           </span>
-          <span>{series.year}</span>
+          <span>{series.year || "—"}</span>
         </div>
       </div>
     </article>
